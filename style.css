@@ -227,6 +227,13 @@ h1, h2, h3 {
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Acts like a perfect wallpaper crop */
+    display: block;
+}
+
 .image-meta {
     display: flex;
     justify-content: space-between;
