@@ -33,9 +33,12 @@ function drawMatrix() {
     }
 }
 
-initBtn.addEventListener('click', () => {
+initBtn.addEventListener('click', async () => {
     // Initialize AudioContext on user interaction
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') {
+        await audioCtx.resume();
+    }
     
     initBtn.style.display = 'none';
     canvas.style.opacity = '1';
@@ -59,7 +62,13 @@ let lastTrailTime = 0;
 let lastSoundTime = 0;
 
 function playBinarySound() {
-    if (!audioCtx || audioCtx.state === 'suspended') return;
+    if (!audioCtx) return;
+    
+    // If suspended by browser policy, try to resume
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
+        return; // Skip playing this specific beep while it resumes
+    }
     
     const osc = audioCtx.createOscillator();
     const gainNode = audioCtx.createGain();
@@ -68,8 +77,8 @@ function playBinarySound() {
     // Random high frequency for data sound
     osc.frequency.setValueAtTime(800 + Math.random() * 2000, audioCtx.currentTime);
     
-    // Very short and quiet beep
-    gainNode.gain.setValueAtTime(0.015, audioCtx.currentTime);
+    // Very short and quiet beep (slightly boosted volume for deployed sites)
+    gainNode.gain.setValueAtTime(0.03, audioCtx.currentTime);
     gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
     
     osc.connect(gainNode);
