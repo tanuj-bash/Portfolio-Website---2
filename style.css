@@ -51,6 +51,7 @@ body {
     padding: 1.5rem 3rem;
     cursor: pointer;
     box-shadow: 8px 8px 0px #000;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .init-btn:hover {
@@ -134,12 +135,13 @@ h1, h2, h3 {
     color: #aaaaaa;
     text-decoration: none;
     margin: 0 1rem;
-    transition: color 0.2s;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
     letter-spacing: 1px;
 }
 
 .nav-links a:hover {
     color: var(--text-light);
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 
 .nav-status {
@@ -185,7 +187,7 @@ h1, h2, h3 {
     padding: 1rem 1.5rem;
     font-size: 0.9rem;
     text-transform: uppercase;
-    transition: all 0.2s;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary {
@@ -331,6 +333,13 @@ h1, h2, h3 {
     background: rgba(10,10,10,0.8);
     display: flex;
     flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.05);
 }
 
 .card-top {
@@ -387,7 +396,7 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     font-family: var(--font-mono);
-    transition: all 0.2s;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover .card-arrow {

@@ -3,6 +3,8 @@ const preloader = document.getElementById('preloader');
 const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
 
+let audioCtx; // Audio context for binary sound
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -32,6 +34,9 @@ function drawMatrix() {
 }
 
 initBtn.addEventListener('click', () => {
+    // Initialize AudioContext on user interaction
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
     initBtn.style.display = 'none';
     canvas.style.opacity = '1';
     
@@ -51,12 +56,39 @@ window.addEventListener('resize', () => {
 
 const trailChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*<>[]{}|+'; 
 let lastTrailTime = 0;
+let lastSoundTime = 0;
+
+function playBinarySound() {
+    if (!audioCtx || audioCtx.state === 'suspended') return;
+    
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    
+    osc.type = 'square';
+    // Random high frequency for data sound
+    osc.frequency.setValueAtTime(800 + Math.random() * 2000, audioCtx.currentTime);
+    
+    // Very short and quiet beep
+    gainNode.gain.setValueAtTime(0.015, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+    
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.05);
+}
 
 function createTrail(e) {
     const currentTime = Date.now();
     
     if (currentTime - lastTrailTime < 20) return;
     lastTrailTime = currentTime;
+
+    if (currentTime - lastSoundTime > 60) {
+        lastSoundTime = currentTime;
+        playBinarySound();
+    }
 
     const pageX = e.pageX || (e.touches && e.touches[0].pageX);
     const pageY = e.pageY || (e.touches && e.touches[0].pageY);
