@@ -125,3 +125,44 @@ function createTrail(e) {
 }
 document.addEventListener('mousemove', createTrail);
 document.addEventListener('touchmove', createTrail, { passive: true });
+
+const globeContainer = document.getElementById('globe-container');
+
+if (globeContainer) {
+    
+    // Generate 10 completely random arcs (Change the '10' below to adjust the amount)
+    const randomArcs = [];
+    for (let i = 0; i < 10; i++) {
+        randomArcs.push({
+            startLat: (Math.random() - 0.5) * 180,
+            startLng: (Math.random() - 0.5) * 360,
+            endLat: (Math.random() - 0.5) * 180,
+            endLng: (Math.random() - 0.5) * 360,
+            color: ['#FFD700', '#FFD700']
+        });
+    }
+
+    const world = Globe({ animateIn: true })(globeContainer)
+        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+        .backgroundColor('rgba(0,0,0,0)') 
+        .width(globeContainer.clientWidth)
+        .height(globeContainer.clientHeight)
+        
+        // Feed the randomly generated array into the globe data
+        .arcsData(randomArcs)
+        .arcColor('color')
+        .arcDashLength(0.4)
+        .arcDashGap(0.2)
+        .arcDashAnimateTime(1500)
+        .arcStroke(1)
+        .pointOfView({ lat: 20, lng: 80, altitude: 2 }); 
+
+    world.controls().autoRotate = true;
+    world.controls().autoRotateSpeed = 1.0;
+    world.controls().enableZoom = false;
+
+    window.addEventListener('resize', () => {
+        world.width(globeContainer.clientWidth);
+        world.height(globeContainer.clientHeight);
+    });
+}
