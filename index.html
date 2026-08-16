@@ -14,15 +14,20 @@
 
     <!-- 1. Matrix Preloader Overlay -->
     <div id="preloader" class="preloader">
-        <button id="init-btn" class="btn btn-primary init-btn">[ INITIALIZE SYSTEM ]</button>
+        <div class="preloader-content">
+            <button id="init-btn" class="btn btn-primary init-btn">[ INITIALIZE SYSTEM ]</button>
+            <div id="idle-prompt" class="idle-prompt">>>> SYSTEM READY <span class="blink">_</span></div>
+        </div>
         <canvas id="matrix-canvas"></canvas>
     </div>
 
     <!-- 2. Top Navigation (Glassmorphism) -->
     <nav class="top-nav">
         <div class="nav-brand">
-            <span class="accent-square">S</span>
-            SUNKARA TANUJ // VOL. 001
+            <a href="#intro" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem;">
+                <span class="accent-square">S</span>
+                SUNKARA TANUJ // VOL. 001
+            </a>
         </div>
         <div class="nav-links">
             <a href="#work">→ WORK</a>
@@ -33,7 +38,7 @@
     </nav>
 
     <!-- 3. Hero Section -->
-    <header class="hero-section">
+    <header id="intro" class="hero-section">
         <div id="globe-container" class="hero-bg-globe"></div>
         <div class="hero-overlay"></div>
         <div class="hero-left">
@@ -64,16 +69,16 @@
             </div>
             <div class="stats-row">
                 <div class="stat-box">
-                    <span class="stat-num">04</span>
+                    <span class="stat-num">03+</span>
                     <span class="stat-label">YRS</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-num">28</span>
-                    <span class="stat-label">SHIPS</span>
+                    <span class="stat-num">30+</span>
+                    <span class="stat-label">clients</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-num">05</span>
-                    <span class="stat-label">AWARDS</span>
+                    <span class="stat-num">500+</span>
+                    <span class="stat-label">designs</span>
                 </div>
             </div>
         </div>
@@ -93,37 +98,190 @@
             <h2>CASE FILES</h2>
         </div>
 
-        <div class="strict-grid">
-            <div class="card">
-                <div class="card-top">
-                    <span>[01] MARKETING ASSETS</span>
-                    <span>2026</span>
-                </div>
-                <div class="card-img-placeholder">[ IMAGE 01 ]</div>
-                <div class="card-bottom">
-                    <div class="card-info">
-                        <h3>EDUCATIONAL CONSULTANCY</h3>
-                        <p>Developing high-conversion, multi-slide promotional carousels and graphic design assets. Focused on clear information hierarchy and platform-optimized layouts.</p>
-                        <span class="card-role">ROLE / DESIGN + LAYOUT</span>
-                    </div>
-                    <div class="card-arrow">↗</div>
-                </div>
+        <div class="premium-gallery">
+            <div class="gallery-item">
+                <img src="assets/Gallery/27x43 internal branding VYS.png" alt="Portfolio Work">
             </div>
-
-            <div class="card">
-                <div class="card-top">
-                    <span>[02] CONTENT ARCHITECTURE</span>
-                    <span>2026</span>
-                </div>
-                <div class="card-img-placeholder">[ IMAGE 02 ]</div>
-                <div class="card-bottom">
-                    <div class="card-info">
-                        <h3>STRUCTURED STORYBOARDS</h3>
-                        <p>Engineering engaging video content from the ground up. Translating marketing objectives into precise shot lists and cohesive reel storyboards for maximum retention.</p>
-                        <span class="card-role">ROLE / DIRECTION</span>
-                    </div>
-                    <div class="card-arrow">↗</div>
-                </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x48 internal branding VYS.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (2).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (3).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (4).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (5).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (6).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (7).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (8).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60 (9).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/36x60.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/48x36.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/4x5.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/4x6 (2).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/7x6.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/A night that lit up the galaxy — DJ Dazzling took over Cosmic House and made the stars dance! Re.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/After Dark.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Artboard1.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Brace yourselves, Vizag! 🔥 The PLUR Music Festival 2025 is bringing underground music legend A(1).jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Brace yourselves, Vizag! 🔥 The PLUR Music Festival 2025 is bringing underground music legend A.jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Copy of 10x8.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Copy of Pithapuram 3half x 5 auto - 1.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/DJ JAAN.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/DJ Riha 2.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/DJ Riha.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Draped in twilight and touched by royalty… 💫A silver-coated masterpiece from KlinKaara — where .jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/Draped in twilight and touched by royalty… 💫A silver-coated masterpiece from KlinKaara — where .mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Get ready for an electrifying night as Blue Vibes presents COSMIC X NOISE – Rise of Europa!🔥 F.jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/Get ready to experience One Night at Cosmic x Noise – an electrifying collaboration brought to y(1).mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/Logo Anim.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/Mondays don’t have to be a drag! Head over to Qubaa Vizag for Monday Night and enjoy a whole day.jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/RABZ 2.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/RABZ.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/RABZ_DIST Land.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/RABZ_DIST Port.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/SUZY LYNX 20.06 (2).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/SUZY LYNX 20.06 (3).png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/SUZY LYNX 20.06.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/TECHNO NIGHT 🔥Brace yourself for a night of dark beats, heavy drops, and cosmic chaos!Blue Vib.jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/TGIF 19.06.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/Task-1.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="assets/Gallery/Turn up your Tuesday nights at Qubaa Vizag with an electrifying vibe as @shriman_srivatsa_ sets.jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/WhatsApp Image 2026-07-08 at 15.12.26.jpeg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/animate_this_image_in_the_same.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/dj sufi.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/pauda university.png" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <video src="assets/Gallery/vid festival.mp4" autoplay loop muted playsinline preload="auto"></video>
+                <button class="audio-toggle" aria-label="Toggle Audio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                </button>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/⚡ Forged to Withstand. Built to Protect.When it comes to strength, trust nothing less than the .jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/✨ Keep Your Diamonds Sparkling Bright! ✨Diamonds are forever, but they need a little care to ke(1).jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/✨ Keep Your Diamonds Sparkling Bright! ✨Diamonds are forever, but they need a little care to ke.jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/✨ This Dhanteras, let your prosperity rise on strong foundations and golden beginnings.Built on .jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/✨ 🪷 Regal Elegance, Re-imagined 🪷 ✨Introducing our Victorian-style layered necklace — adorned .jpg" alt="Portfolio Work">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Gallery/🌟 Friday nights = pure Bollywood energy with a twist!This week at Cosmic House, get ready as D.png" alt="Portfolio Work">
             </div>
         </div>
     </section>
