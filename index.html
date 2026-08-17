@@ -617,5 +617,23 @@
     </section>
 
     <script src="script.js"></script>
+
+    <script>
+    // This runs as soon as the page loads
+    document.addEventListener("DOMContentLoaded", () => {
+        // Find all images and videos inside your gallery
+        const mediaElements = document.querySelectorAll('.gallery-item img, .gallery-item video');
+        
+        mediaElements.forEach(media => {
+            let rawUrl = media.getAttribute('src');
+            if (rawUrl) {
+                // encodeURI safely translates emojis and spaces into percent-encoding (e.g., %20)
+                // while keeping the https:// and slashes intact
+                media.src = encodeURI(rawUrl);
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
